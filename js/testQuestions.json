@@ -1,0 +1,162 @@
+{"Economics": {
+        "No1": {
+            "id": 1,
+            "question": "Question 1: Who proposed the theory of the invisible hand",
+            "options": {
+                "a": "Professor Lionel Robbins",
+                "b": "Karl Max",
+                "c": "Adam Smith",
+                "d": "John Maynard Keynes"
+            },
+            "correctAnswer": "Adam Smith"
+        },
+        "No2": {
+            "id": 2,
+            "question": "Question 2: Who's definition of Economics is considered to be the internationally accepted standard",
+            "options": {
+                "a": "Professor Lionel Robbins",
+                "b": "Karl Max",
+                "c": "Adam Smith",
+                "d": "John Maynard Keynes"
+            },
+            "correctAnswer": "Professor Lionel Robbins"
+        },
+        "No3": {
+            "id": 3,
+            "question": "Question 3: Who's considered the father of Monetary Economics",
+            "options": {
+                "a": "Professor Lionel Robbins",
+                "b": "Karl Max",
+                "c": "Adam Smith",
+                "d": "John Maynard Keynes"
+            },
+            "correctAnswer": "John Maynard Keynes"
+        },
+        "No4": {
+            "id": 4,
+            "question": "Question 4: What specialization of economics concerns itself with the business of personal and company income, demand and supply",
+            "options": {
+                "a": "MacroEconomics",
+                "b": "MicroEconomics",
+                "c": "Monetary Economics",
+                "d": "Public Sector Economics"
+            },
+            "correctAnswer": "MicroEconomics"
+        },
+        "No5": {
+            "id": 5,
+            "question": "Question 5: What specialization of economics concerns itself with the business of Country as a whole and how it manages it's resources and how those resources are distributed",
+            "options": {
+                "a": "MacroEconomics",
+                "b": "MicroEconomics",
+                "c": "Monetary Economics",
+                "d": "Public Sector Economics"
+            },
+            "correctAnswer": "MacroEconomics"
+        }
+    },
+    "Sports": {
+        "No1": {
+            "question": "Question 1: What team is considered the Red side of MerseySide",
+            "options": {
+                "a": "Liverpool FC",
+                "b": "Manchester United",
+                "c": "Stoke City",
+                "d": "Arsenal"
+            },
+            "correctAnswer": "Liverpool FC"
+        },
+        "No2": {
+            "question": "Question 2: Who's the NBA Player with the most NBA Championship Rings",
+            "options": {
+                "a": "Michael Jordan",
+                "b": "LeBron James",
+                "c": "Kobe Bryant",
+                "d": "Bill Russell"
+            },
+            "correctAnswer": "Bill Russell"
+        },
+        "No3": {
+            "question": "Question 3: Who's the NBA Player famous for scoring 100 points in a game",
+            "options": {
+                "a": "LeBron James",
+                "b": "Steph Curry",
+                "c": "Kobe Bryant",
+                "d": "Wilt Chamberlain"
+            },
+            "correctAnswer": "Wilt Chamberlain"
+        },
+        "No4": {
+            "question": "Question 4: Who's the first and only unanimous NBA MVP in the history of the NBA till date",
+            "options": {
+                "a": "Shaquille O'Neal",
+                "b": "LeBron James",
+                "c": "Steph Curry",
+                "d": "Kobe Bryant"
+            },
+            "correctAnswer": "Steph Curry"
+        },
+        "No5": {
+            "question": "Question 5: The Golden State Warriors have the record most wins in an 82 game season with how many wins",
+            "options": {
+                "a": 72,
+                "b": 69,
+                "c": 73,
+                "d": 70
+            },
+            "correctAnswer": 73
+        }
+    },
+    "Mathematics": {
+        "No1": {
+            "question": "Question 1: What is the sum of 12 and 18",
+            "options": {
+                "a": 20,
+                "b": 30,
+                "c": 31,
+                "d": 21
+            },
+            "correctAnswer": 30
+        },
+        "No2": {
+            "question": "Question 2: What's the result of the multiplication of 8 and 10",
+            "options": {
+                "a": 810,
+                "b": 180,
+                "c": 108,
+                "d": 80
+            },
+            "correctAnswer": 80
+        },
+        "No3": {
+            "question": "Question 3: Who developed the important trigonometry theorem called 'Pythagoras Theorem'",
+            "options": {
+                "a": "LeBron James",
+                "b": "Adam Smith",
+                "c": "Pythagoras",
+                "d": "Trigonometry"
+            },
+            "correctAnswer": "Pythagoras"
+        },
+        "No4": {
+            "question": "Question 4: 2x + 4, solve for x",
+            "options": {
+                "a": 1,
+                "b": "x",
+                "c": 4,
+                "d": 2
+            },
+            "correctAnswer": 2
+        },
+        "No5": {
+            "question": "Question 5: What is the sum of 1 and 1",
+            "options": {
+                "a": 7,
+                "b": 1,
+                "c": 3,
+                "d": 2
+            },
+            "correctAnswer": 2
+        }
+    }
+}

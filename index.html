@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>TestApp</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Tangerine" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<div>
+			<h2 id="title">Welcome to Test of Wits!</h2>
+		</div>
+	</header>
+	<section id="questions" class="questions">
+		<div class="main" id="main">
+			<form action="">
+				<div>
+					<label for="username">Username: </label>
+					<input id="username" type="text" name="Username">
+				</div>
+				<div>
+					<label for="identificationNumber">Identification Number: </label>
+					<input id="identificationNumber" type="text" name="identificationNumber">
+				</div>
+				<div>
+					<label for="subjects">Subjects: </label>
+					<select name="subjects" id="dropdown">
+						<option value="Economics">Economics</option>
+						<option value="Sports">Sports</option>
+						<option value="Mathematics">Mathematics</option>
+					</select>
+				</div>
+				<div class="submit">
+					<input id="submit" type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
+		<div id="options" class="options">
+		</div>
+	</section>
+	<section id="footer" class="footer">
+		<div id="pagination" class="pagination">
+
+		</div>
+	</section>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

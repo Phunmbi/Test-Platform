@@ -1,0 +1,67 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #242038;
+	color: white;
+	font-size: 16px
+}
+
+h2 {
+	margin: 40px;
+	font-size: 1.8em;
+	text-align: center;
+	font-weight: bolder;
+}
+
+header {
+	margin-top: 80px;
+}
+
+section {
+	margin: 40px auto;
+	width: 80%;
+	.main {
+		div {
+			margin: 40px;
+		}
+		label {
+			font-weight: 900;
+		}
+		input[type=text] {
+			background-color: #8D86C9;
+			border: none;
+			border-bottom: 2px solid black;
+			width: 40%;
+			margin-left: 10px;
+		}
+		select {
+			// background-color: #639FAB;
+			padding: 10px;
+			margin-left: 10px;
+			border: none;
+		}
+		.submit {
+			text-align: center;
+			input[type=submit] {
+				padding: 10px 17px;
+				background-color: #8D86C9;
+				color: white;
+				border: none;
+				border-radius: 5px;
+			}
+		}
+	}
+	input[type=radio] {
+		margin-right: 20px;
+	}
+	label{
+		font-size: 1.3;
+	}
+	button {
+		padding: 10px 17px;
+		background-color: #8D86C9;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		font-weight: 900;
+	}
+}
