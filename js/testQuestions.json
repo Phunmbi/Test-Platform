@@ -1,6 +1,6 @@
-{"Economics": {
+{
+    "Economics": {
         "No1": {
-            "id": 1,
             "question": "Question 1: Who proposed the theory of the invisible hand",
             "options": {
                 "a": "Professor Lionel Robbins",
@@ -11,7 +11,6 @@
             "correctAnswer": "Adam Smith"
         },
         "No2": {
-            "id": 2,
             "question": "Question 2: Who's definition of Economics is considered to be the internationally accepted standard",
             "options": {
                 "a": "Professor Lionel Robbins",
@@ -22,7 +21,6 @@
             "correctAnswer": "Professor Lionel Robbins"
         },
         "No3": {
-            "id": 3,
             "question": "Question 3: Who's considered the father of Monetary Economics",
             "options": {
                 "a": "Professor Lionel Robbins",
@@ -33,7 +31,6 @@
             "correctAnswer": "John Maynard Keynes"
         },
         "No4": {
-            "id": 4,
             "question": "Question 4: What specialization of economics concerns itself with the business of personal and company income, demand and supply",
             "options": {
                 "a": "MacroEconomics",
@@ -44,7 +41,6 @@
             "correctAnswer": "MicroEconomics"
         },
         "No5": {
-            "id": 5,
             "question": "Question 5: What specialization of economics concerns itself with the business of Country as a whole and how it manages it's resources and how those resources are distributed",
             "options": {
                 "a": "MacroEconomics",

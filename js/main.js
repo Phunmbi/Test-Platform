@@ -28,7 +28,7 @@ function clearDom() {
 function createQuestion(track, score) {
     var getQuestion = new XMLHttpRequest();
     getQuestion.overrideMimeType("application/json");
-    getQuestion.open("GET", "file:///C:/wamp64/www/TestApp/js/testQuestions.json", true);
+    getQuestion.open("GET", "js/testQuestions.json", true);
     getQuestion.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             data = JSON.parse(getQuestion.responseText);
