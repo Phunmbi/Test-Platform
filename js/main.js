@@ -6,6 +6,7 @@ var submit = document.getElementById("submit");
 var dropdown = document.getElementById("dropdown");
 var options = document.getElementById("options");
 var buttons = document.getElementById("pagination");
+var track = 0;
 
 username.focus();
 
@@ -43,6 +44,7 @@ submit.addEventListener("click", function (event) {
     storeUserInfo();
     clearDom();
     createQuestion(0);
+    createPreviousButton();
     createNextButton();
 })
 
@@ -96,6 +98,7 @@ function createOptions(optionLetter) {
     var option = document.createElement("label");
     var radio = document.createElement("input");
     radio.type = "radio";
+    radio.name = "option"
     option.innerHTML = optionLetter;
     parentDiv.appendChild(radio);
     parentDiv.appendChild(option);
@@ -103,16 +106,19 @@ function createOptions(optionLetter) {
 }
 
 function createNextButton(result) {
-    var track = 0;
+    var chosenOption = "";
     var score = "";
     var btn = document.createElement("button");
     btn.innerHTML = "Next";
     buttons.appendChild(btn);
     btn.addEventListener("click", function (event) {
+        console.log(track);
         for (var answer in options.children) {
             if (options.children.hasOwnProperty(answer)) {
+                console.log(options.children[answer].children[0].checked);
                 if (options.children[answer].children[0].checked == true) {
                     score = options.children[answer].children[1].textContent;
+                    sessionStorage.setItem("storedDone" + track, options.children[answer].children[1].textContent);
                 }
             }
         }
@@ -120,6 +126,40 @@ function createNextButton(result) {
         track++;
         createQuestion(track, score);
     })
+}
+
+function createPreviousButton(result) {
+    var score = "";
+    var btn = document.createElement("button");
+    btn.innerHTML = "Previous";
+    buttons.appendChild(btn);
+    btn.addEventListener("click", function (event) {
+        keepAnswer(result)
+        clearDom();
+        if (track < 0) {
+            location.reload();
+        }
+        createQuestion(track, score);
+    })
+}
+
+function keepAnswer(result) {
+    track--;
+    var tracker = track - 1;
+    var storedDone = sessionStorage.getItem("storedDone" + track);
+    for (var answer in options.children) {
+        if (options.children.hasOwnProperty(answer)) {
+            console.log("A2")
+            console.log(options.children[answer].children[1].textContent);
+            console.log(storedDone);
+            if (options.children[answer].children[1].textContent == storedDone) {
+                console.log("A3");
+                score = options.children[answer].children[1].textContent;
+                console.log(options.children[answer].children[0]);
+                options.children[answer].children[0].checked = true;
+            }
+        }
+    }
 }
 
 function storeAnswer(listQuestions, tracks, score) {
@@ -135,7 +175,7 @@ function storeAnswer(listQuestions, tracks, score) {
 
 function reset() {
     var btn = document.createElement("button");
-    btn.innerHTML = "Reset";
+    btn.innerHTML = "Return to the begin";
     buttons.appendChild(btn);
 
     btn.addEventListener("click", function (event) {
