@@ -16,7 +16,7 @@ function storeUserInfo() {
         sessionStorage.setItem("matricNo", identificationNo.value);
         sessionStorage.setItem("subject", dropdown.value)
     } else {
-        console.log("Sorry we won't be able to collate your results because your browser won't let us.");
+        alert("Sorry we won't be able to collate your results because your browser won't let us.");
     }
 }
 
@@ -113,10 +113,8 @@ function createNextButton(result) {
     btn.innerHTML = "Next";
     buttons.appendChild(btn);
     btn.addEventListener("click", function (event) {
-        console.log(track);
         for (var answer in options.children) {
             if (options.children.hasOwnProperty(answer)) {
-                console.log(options.children[answer].children[0].checked);
                 if (options.children[answer].children[0].checked == true) {
                     score = options.children[answer].children[1].textContent;
                     sessionStorage.setItem("storedDone" + track, options.children[answer].children[1].textContent);
@@ -150,12 +148,8 @@ function keepAnswer(result) {
     var storedDone = sessionStorage.getItem("storedDone" + track);
     for (var answer in options.children) {
         if (options.children.hasOwnProperty(answer)) {
-            console.log(options.children[answer].children[1].textContent);
-            console.log(storedDone);
             if (options.children[answer].children[1].textContent == storedDone) {
-                console.log("A3");
                 score = options.children[answer].children[1].textContent;
-                console.log(options.children[answer].children[0]);
                 options.children[answer].children[0].checked = true;
             }
         }
