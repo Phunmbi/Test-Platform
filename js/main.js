@@ -67,7 +67,7 @@ function response(result, track, score) {
 
 function setQuestion(listQuestions, track) {
     if (listQuestions.length !== track) {
-        main.innerHTML = listQuestions[track].question;
+        main.innerHTML = "<h3>" + listQuestions[track].question + "</h3>";
         for (var option in listQuestions[track].options) {
             var eachOption = listQuestions[track].options[option];
             createOptions(eachOption);
@@ -99,6 +99,7 @@ function createOptions(optionLetter) {
     var radio = document.createElement("input");
     radio.type = "radio";
     radio.name = "option"
+    parentDiv.classList = "options"
     option.innerHTML = optionLetter;
     parentDiv.appendChild(radio);
     parentDiv.appendChild(option);
@@ -149,7 +150,6 @@ function keepAnswer(result) {
     var storedDone = sessionStorage.getItem("storedDone" + track);
     for (var answer in options.children) {
         if (options.children.hasOwnProperty(answer)) {
-            console.log("A2")
             console.log(options.children[answer].children[1].textContent);
             console.log(storedDone);
             if (options.children[answer].children[1].textContent == storedDone) {

@@ -12,13 +12,20 @@ h2 {
 	font-weight: bolder;
 }
 
+h3{
+	margin: 15px;
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: bolder;
+}
+
 header {
 	margin-top: 80px;
 }
 
 section {
 	margin: 40px auto;
-	width: 80%;
+	width: 60%;
 	.main {
 		div {
 			margin: 40px;
@@ -53,9 +60,10 @@ section {
 	}
 	input[type=radio] {
 		margin-right: 20px;
+		vertical-align: middle;
 	}
 	label{
-		font-size: 1.3;
+		font-size: 1.2em;
 	}
 	button {
 		margin: 40px;
@@ -65,5 +73,18 @@ section {
 		border: none;
 		border-radius: 5px;
 		font-weight: 900;
+	}
+
+	.options{
+		margin-top: 20px;
+	}
+
+	.pagination{
+		margin: 0 auto;
+	}
+
+	.signupForm{
+		display: flex;
+		justify-content: space-between;
 	}
 }
