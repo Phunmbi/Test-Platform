@@ -1,3 +1,4 @@
+// Defining global variables, elements predefined in the DOM that we'll be manipulating
 var title = document.getElementById("title");
 var main = document.getElementById("main");
 var username = document.getElementById("username");
@@ -8,8 +9,10 @@ var options = document.getElementById("options");
 var buttons = document.getElementById("pagination");
 var track = 0;
 
-username.focus();
+username.focus(); // Putting the focus on the form
 
+// We create reusable functions 
+// first of which is the function in charge of storing the user's details entered
 function storeUserInfo() {
     if (typeof (Storage) !== "undefined") {
         sessionStorage.setItem("username", username.value);
@@ -20,12 +23,14 @@ function storeUserInfo() {
     }
 }
 
+// Then another one in charge of clearing the DOM
 function clearDom() {
     title.innerHTML = "";
     main.innerHTML = "";
     options.innerHTML = "";
 }
 
+// This is the major function, the one in charge of making the AJAX calls to the JSON file to get our data
 function createQuestion(track, score) {
     var getQuestion = new XMLHttpRequest();
     getQuestion.overrideMimeType("application/json");
@@ -39,6 +44,7 @@ function createQuestion(track, score) {
     getQuestion.send();
 };
 
+// This is the event listener that then runs our above defined functions in the right order to start our dynamic app
 submit.addEventListener("click", function (event) {
     event.preventDefault();
     storeUserInfo();
@@ -48,6 +54,7 @@ submit.addEventListener("click", function (event) {
     createNextButton();
 })
 
+// This is the function in charge of managing the data gotten from the AJAX call, it then sets, the question and stores answers
 function response(result, track, score) {
     var listQuestions = [];
     for (var subject in result) {
@@ -65,6 +72,7 @@ function response(result, track, score) {
     }
 }
 
+// This is the function in charge of dynamically creating questions
 function setQuestion(listQuestions, track) {
     if (listQuestions.length !== track) {
         main.innerHTML = "<h3>" + listQuestions[track].question + "</h3>";
@@ -78,6 +86,7 @@ function setQuestion(listQuestions, track) {
     }
 }
 
+// After the questions have been created and answered, this is the function in charge of returning the scores
 function setResults() {
     buttons.innerHTML = "";
     var storedUser = sessionStorage.getItem("username");
@@ -93,7 +102,7 @@ function setResults() {
     reset();
 }
 
-
+// This is to dynamically create options
 function createOptions(optionLetter) {
     var parentDiv = document.createElement("div");
     var option = document.createElement("label");
@@ -107,6 +116,7 @@ function createOptions(optionLetter) {
     options.appendChild(parentDiv);
 }
 
+// Also to dynamically create a next button on every page and add the event listener used to dynamically create other pages
 function createNextButton(result) {
     var chosenOption = "";
     var score = "";
@@ -128,6 +138,7 @@ function createNextButton(result) {
     })
 }
 
+// This is the function in charge of going back to the previous questions
 function createPreviousButton(result) {
     var score = "";
     var btn = document.createElement("button");
@@ -143,6 +154,7 @@ function createPreviousButton(result) {
     })
 }
 
+// This function is in charge of storing the answer so that when you go to previous questions, your last option is still there
 function keepAnswer(){
     var storedDone = sessionStorage.getItem("storedDone" + track);
     for (var answer in options.children) {
@@ -154,6 +166,7 @@ function keepAnswer(){
     }
 }
 
+// This is the function in charge of storing your chosen answer
 function storeAnswer(listQuestions, tracks, score) {
     if (tracks > 0) {
         tracks--
@@ -165,6 +178,7 @@ function storeAnswer(listQuestions, tracks, score) {
     }
 }
 
+// This is the function that takes you back to the beginning once you are done with the questions
 function reset() {
     var btn = document.createElement("button");
     btn.innerHTML = "Return to the begin";
