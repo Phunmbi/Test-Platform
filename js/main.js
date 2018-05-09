@@ -172,5 +172,6 @@ function reset() {
 
     btn.addEventListener("click", function (event) {
         window.location.reload();
+        sessionStorage.clear();
     })
 }
