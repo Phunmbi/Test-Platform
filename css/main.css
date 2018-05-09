@@ -1,49 +1,56 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #242038;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #4E6E58;
   color: white;
-  font-size: 16px; }
+  font-size: 18px; }
 
 h2 {
-  margin: 40px;
+  margin-top: 40px;
   font-size: 1.8em;
   text-align: center;
-  font-weight: bolder; }
+  font-weight: 400; }
 
 h3 {
   margin: 15px;
   font-size: 1.5em;
   text-align: center;
-  font-weight: bolder; }
-
-header {
-  margin-top: 80px; }
+  font-weight: 400; }
 
 section {
-  margin: 40px auto;
+  margin: 20px auto;
   width: 60%; }
   section .main div {
     margin: 40px; }
   section .main label {
-    font-weight: 900; }
+    font-weight: 400; }
   section .main input[type=text] {
-    background-color: #8D86C9;
+    background-color: #7ADFBB;
     border: none;
     border-bottom: 2px solid black;
-    width: 40%;
+    width: 45%;
     margin-left: 10px;
     padding: 11px; }
   section .main select {
+    background-color: #7ADFBB;
+    border: none;
+    border-bottom: 2px solid black;
     padding: 10px;
     margin-left: 10px;
-    border: none; }
+    cursor: pointer; }
+  section .main option {
+    background-color: #4C8577;
+    cursor: pointer; }
+    section .main option:hover {
+      cursor: pointer;
+      background-color: #4C8577; }
   section .main .submit {
     text-align: center; }
     section .main .submit input[type=submit] {
       padding: 10px 17px;
-      background-color: #8D86C9;
-      color: white;
+      background-color: #7ADFBB;
       border: none;
+      border-bottom: 2px solid black;
+      color: black;
       border-radius: 5px; }
   section input[type=radio] {
     margin-right: 20px;
@@ -51,17 +58,19 @@ section {
   section label {
     font-size: 1.2em; }
   section button {
+    background-color: #7ADFBB;
+    color: black;
+    border: none;
+    border-bottom: 2px solid black;
     margin: 40px;
     padding: 10px 17px;
-    background-color: #8D86C9;
-    color: white;
-    border: none;
     border-radius: 5px;
-    font-weight: 900; }
+    font-size: 1em; }
   section .options {
     margin-top: 20px; }
   section .pagination {
-    margin: 0 auto; }
+    display: flex;
+    justify-content: space-around; }
   section .signupForm {
     display: flex;
     justify-content: space-between; }
