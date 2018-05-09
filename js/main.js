@@ -71,6 +71,7 @@ function setQuestion(listQuestions, track) {
         for (var option in listQuestions[track].options) {
             var eachOption = listQuestions[track].options[option];
             createOptions(eachOption);
+            keepAnswer();
         }
     } else {
         setResults();
@@ -133,7 +134,7 @@ function createPreviousButton(result) {
     btn.innerHTML = "Previous";
     buttons.appendChild(btn);
     btn.addEventListener("click", function (event) {
-        keepAnswer(result)
+        track--;
         clearDom();
         if (track < 0) {
             location.reload();
@@ -142,14 +143,11 @@ function createPreviousButton(result) {
     })
 }
 
-function keepAnswer(result) {
-    track--;
-    var tracker = track - 1;
+function keepAnswer(){
     var storedDone = sessionStorage.getItem("storedDone" + track);
     for (var answer in options.children) {
         if (options.children.hasOwnProperty(answer)) {
             if (options.children[answer].children[1].textContent == storedDone) {
-                score = options.children[answer].children[1].textContent;
                 options.children[answer].children[0].checked = true;
             }
         }
