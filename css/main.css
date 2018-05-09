@@ -30,6 +30,8 @@ section {
     width: 45%;
     margin-left: 10px;
     padding: 11px; }
+    section .main input[type=text]:focus {
+      outline-style: none; }
   section .main select {
     background-color: #7ADFBB;
     border: none;

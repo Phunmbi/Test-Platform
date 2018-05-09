@@ -181,7 +181,7 @@ function storeAnswer(listQuestions, tracks, score) {
 // This is the function that takes you back to the beginning once you are done with the questions
 function reset() {
     var btn = document.createElement("button");
-    btn.innerHTML = "Return to the begin";
+    btn.innerHTML = "Try Again";
     buttons.appendChild(btn);
 
     btn.addEventListener("click", function (event) {
