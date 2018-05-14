@@ -17,7 +17,7 @@ function storeUserInfo() {
     if (typeof (Storage) !== "undefined") {
         sessionStorage.setItem("username", username.value);
         sessionStorage.setItem("matricNo", identificationNo.value);
-        sessionStorage.setItem("subject", dropdown.value)
+        sessionStorage.setItem("subject", dropdown.value);
     } else {
         alert("Sorry we won't be able to collate your results because your browser won't let us.");
     }
@@ -40,9 +40,9 @@ function createQuestion(track, score) {
             data = JSON.parse(getQuestion.responseText);
             response(data, track, score);
         }
-    }
+    };
     getQuestion.send();
-};
+}
 
 // This is the event listener that then runs our above defined functions in the right order to start our dynamic app
 submit.addEventListener("click", function (event) {
@@ -52,7 +52,7 @@ submit.addEventListener("click", function (event) {
     createQuestion(0);
     createPreviousButton();
     createNextButton();
-})
+});
 
 // This is the function in charge of managing the data gotten from the AJAX call, it then sets, the question and stores answers
 function response(result, track, score) {
@@ -63,8 +63,8 @@ function response(result, track, score) {
             title.innerHTML = "Welcome to the " + subject + " Test Questions";
             for (var numbers in questions) {
                 if (questions.hasOwnProperty(numbers)) {
-                    listQuestions.push(questions[numbers])
-                };
+                    listQuestions.push(questions[numbers]);
+                }
             }
             storeAnswer(listQuestions, track, score);
             setQuestion(listQuestions, track);
@@ -97,19 +97,19 @@ function setResults() {
     var question3 = parseInt(sessionStorage.getItem("question2"));
     var question4 = parseInt(sessionStorage.getItem("question3"));
     var question5 = parseInt(sessionStorage.getItem("question4"));
-    var finalResult = question1 + question2 + question3 + question4 + question5
+    var finalResult = question1 + question2 + question3 + question4 + question5;
     title.innerHTML = "Hello " + storedUser + ", with Identification Number " + storedMatric + ". In your " + storedSubject + " test, you scored " + finalResult + " of 5";
     reset();
 }
 
-// This is to dynamically create options
+// Dynamically create options
 function createOptions(optionLetter) {
     var parentDiv = document.createElement("div");
     var option = document.createElement("label");
     var radio = document.createElement("input");
     radio.type = "radio";
-    radio.name = "option"
-    parentDiv.classList = "options"
+    radio.name = "option";
+    parentDiv.classList = "options";
     option.innerHTML = optionLetter;
     parentDiv.appendChild(radio);
     parentDiv.appendChild(option);
@@ -135,7 +135,7 @@ function createNextButton(result) {
         clearDom();
         track++;
         createQuestion(track, score);
-    })
+    });
 }
 
 // This is the function in charge of going back to the previous questions
@@ -151,7 +151,7 @@ function createPreviousButton(result) {
             location.reload();
         }
         createQuestion(track, score);
-    })
+    });
 }
 
 // This function is in charge of storing the answer so that when you go to previous questions, your last option is still there
@@ -169,11 +169,11 @@ function keepAnswer(){
 // This is the function in charge of storing your chosen answer
 function storeAnswer(listQuestions, tracks, score) {
     if (tracks > 0) {
-        tracks--
+        tracks--;
         if (score == listQuestions[tracks].correctAnswer) {
-            sessionStorage.setItem("question" + tracks, 1)
+            sessionStorage.setItem("question" + tracks, 1);
         } else {
-            sessionStorage.setItem("question" + tracks, 0)
+            sessionStorage.setItem("question" + tracks, 0);
         }
     }
 }
@@ -187,5 +187,5 @@ function reset() {
     btn.addEventListener("click", function (event) {
         window.location.reload();
         sessionStorage.clear();
-    })
+    });
 }
